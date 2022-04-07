@@ -9,7 +9,7 @@ public class Item {
     private String name;
     private double price;
 
-    private Item() {
+    protected Item() {
     }
 
     private Item(String name, double price) {
