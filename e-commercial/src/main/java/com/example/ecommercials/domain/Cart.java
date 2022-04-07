@@ -1,5 +1,6 @@
 package com.example.ecommercials.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.springframework.data.annotation.Id;
@@ -9,14 +10,15 @@ public class Cart {
     private @Id String id;
     private List<CartItem> cartItems;
 
-    protected Cart() {
+    private Cart() {
     }
 
-    private Cart(String id) {
+    public Cart(String id) {
         this.id = id;
+        this.cartItems = new ArrayList<>();
     }
 
-    private Cart(String id, List<CartItem> cartItems) {
+    public Cart(String id, List<CartItem> cartItems) {
         this.id = id;
         this.cartItems = cartItems;
     }
@@ -27,6 +29,22 @@ public class Cart {
 
     public static Cart of(String id, List<CartItem> cartItems) {
         return new Cart(id, cartItems);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public List<CartItem> getCartItems() {
+        return cartItems;
+    }
+
+    public void setCartItems(List<CartItem> cartItems) {
+        this.cartItems = cartItems;
     }
 
     @Override

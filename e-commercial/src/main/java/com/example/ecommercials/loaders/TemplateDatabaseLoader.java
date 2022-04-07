@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class TemplateDatabaseLoader {
 
     @Bean
-    CommandLineRunner initialize(MongoOperations mongoOperations) {
+    public CommandLineRunner initialize(MongoOperations mongoOperations) {
         return args -> {
             mongoOperations.save(Item.of("Alarm clock", 19.99));
             mongoOperations.save(Item.of("Smart TV tray", 24.99));

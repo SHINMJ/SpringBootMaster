@@ -10,7 +10,7 @@ public class CartItem {
     private CartItem() {
     }
 
-    private CartItem(Item item) {
+    public CartItem(Item item) {
         this.item = item;
         this.quantity = 1;
     }
@@ -19,4 +19,24 @@ public class CartItem {
         return new CartItem(item);
     }
 
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void increment() {
+        this.quantity = this.quantity+1;
+    }
 }
